@@ -22,10 +22,14 @@ Here's how you typically use `.tfvars` files
 
 2. Create one or more `.tfvars` files, each containing specific values for those input variables.
 
-3. When running Terraform commands (e.g., terraform apply, terraform plan), you can specify which .tfvars file(s) to use with the -var-file option:
+3. When terraform command like terraform apply is run it will apply the values in .tfvars file to the variables created. If default value there in .tf files. it will replace those values. If default value not present in .tf file, it will apply value mentioned in .tfvars.
+
+4.  When running Terraform commands (e.g., terraform apply, terraform plan), you can specify which .tfvars file(s) to use with the -var-file option:
 
 ```
 terraform apply -var-file=dev.tfvars
 ```
+If -var-file option not used with the command, terraform.tfvars is used as default file.
 
 By using `.tfvars` files, you can keep your Terraform code more generic and flexible while tailoring configurations to different scenarios and environments.
+
