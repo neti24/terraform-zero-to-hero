@@ -60,3 +60,17 @@ output "root_output" {
 ```
 
 This allows you to share data and values between different parts of your Terraform configuration and create more modular and maintainable infrastructure-as-code setups.
+
+These variables can be modified from the terraform apply command as well, i.e, these variable values can be passed from the terraform apply command as well.
+
+Also these variables need not be there in the main.tf. We can have different files (.tf files variables.tf, output.tf etc.) for defining our variables. This makes the terraform project structure more organized, readable, easy-to-use and sharable among other teams.
+
+Usually our terraform project will look something like:
+```
+provider.tf
+input.tf
+output.tf
+main.tf
+terraform.tfvars
+```
+where the .tf files will have variables defined in them and .tfvars file will have the values for the variables.
